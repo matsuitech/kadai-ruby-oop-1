@@ -1,0 +1,41 @@
+#Teamクラス作成
+class Team
+    
+    #インスタンスの変数
+    attr_accessor :name, :win, :lose, :draw
+    
+    #インスタンスの初期化（基準をGiantsに設定）
+    def initialize(name, win, lose, draw)
+        self.name = name
+        self.win = win
+        self.lose = lose
+        self.draw = draw
+    end
+    
+    #インスタンスが持つメソッド
+    #勝率の計算
+    def calc_win_rate
+        self.win.to_f/(self.win.to_f + self.lose.to_f)
+    end
+    #チーム成績を表示させる
+    def show_team_result
+        puts "#{self.name} の2020年の成績は #{self.win}勝 #{self.lose}敗 #{self.draw}分、勝率は #{calc_win_rate}です。"
+    end
+end
+    
+#インスタンスの生成
+giants = Team.new("Giants", 67, 45, 8)
+tigers = Team.new("Tigers", 60, 53, 7)
+dragons = Team.new("Dragons", 60, 55, 5)
+baystars = Team.new("BayStars", 56, 58, 6)
+carp = Team.new("Carp", 52, 56, 12)
+swallows = Team.new("Swallows", 41, 69, 10)
+
+#インスタンスの使用
+giants.show_team_result
+tigers.show_team_result
+dragons.show_team_result
+baystars.show_team_result
+carp.show_team_result
+swallows.show_team_result
+
