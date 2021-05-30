@@ -4,7 +4,7 @@ class Team
     #インスタンスの変数
     attr_accessor :name, :win, :lose, :draw
     
-    #インスタンスの初期化（基準をGiantsに設定）
+    #インスタンスの初期化
     def initialize(name, win, lose, draw)
         self.name = name
         self.win = win
